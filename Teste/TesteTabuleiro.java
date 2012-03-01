@@ -139,14 +139,14 @@ public class TesteTabuleiro {
 		}
 	}
 
-	// addBarcoNoTabuleiro tabuleiro=1 nome="PORTA_AVIOES" l1=7 c1=4 l2=11 c2=4
-	@Ignore
-	public void addBarcoNoTabuleiro() throws BarcoInvalidoException {
-
-		int tab = 1;
-		t.addBarcoNoJogo("PORTA_AVIOES", 4);
-		int tabuleiro[][] = { { 7, 4 }, { 11, 4 } };
-		//assertEquals(7, t.getLinha() );
-	}
+//	// addBarcoNoTabuleiro tabuleiro=1 nome="PORTA_AVIOES" l1=7 c1=4 l2=11 c2=4
+//	@Ignore
+//	public void addBarcoNoTabuleiro() throws BarcoInvalidoException {
+//
+//		int tab = 1;
+//		t.addBarcoNoJogo("PORTA_AVIOES", 4);
+//		int tabuleiro[][] = { { 7, 4 }, { 11, 4 } };
+//		//assertEquals(7, t.getLinha() );
+//	}
 
 }
