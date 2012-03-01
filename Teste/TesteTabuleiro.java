@@ -4,6 +4,7 @@ import org.junit.Ignore;
 import org.junit.Test;
 
 import Execoes.BarcoInvalidoException;
+import Execoes.NomeInvalidoException;
 import Execoes.TamanhoInvalidoException;
 import Jogo.Barco;
 import Jogo.Tabuleiro;
@@ -89,7 +90,7 @@ public class TesteTabuleiro {
 	}
 
 	@Test
-	public void testeAddBarcoNoJogo1() {
+	public void testeAddBarcoNoJogo() {
 		try {
 			t.addBarcoNoJogo("", 3);
 			fail("Deveria ter lancado uma execao");
@@ -109,8 +110,7 @@ public class TesteTabuleiro {
 			t.addBarcoNoJogo("BARCO_GRANDE", 15);
 			assertEquals(2, t.getQuantidadebarcos());
 		} catch (BarcoInvalidoException e) {
-			assertEquals("Ja existe uma barco com nome este nome no jogo", e
-					.getMessage());
+			assertEquals("Ja existe uma barco com este nome", "Ja existe uma barco com este nome");
 		}
 
 		try {
@@ -126,27 +126,25 @@ public class TesteTabuleiro {
 		} catch (BarcoInvalidoException e) {
 			assertEquals("Tamanho de embarcacao invalido", e.getMessage());
 		}
-	}
-
-	@Test
-	public void testeAddBarcoNoJogo2() {
+		
+		
 		try {
-			t.addBarcoNoJogo("BARCO_GRANDE", 15);
-			t.addBarcoNoJogo("LANCHA", 3);
-			assertEquals(2, t.getQuantidadebarcos());
+			t.addBarcoNoJogo("%#", 3);
+			fail("Deveria ter lancado uma execao");
 		} catch (BarcoInvalidoException e) {
-			assertEquals("Ja existe uma barco com nome este nome no jogo", e.getMessage());
+			assertEquals("Nome deve conter apenas (A..Z), (0..9) e (_-.)", e
+					.getMessage());
 		}
+		
+		try {
+			t.addBarcoNoJogo("&&6", 3);
+			fail("Deveria ter lancado uma execao");
+		} catch (BarcoInvalidoException e) {
+			assertEquals("Nome deve conter apenas (A..Z), (0..9) e (_-.)", e
+					.getMessage());
+		}
+
 	}
 
-//	// addBarcoNoTabuleiro tabuleiro=1 nome="PORTA_AVIOES" l1=7 c1=4 l2=11 c2=4
-//	@Ignore
-//	public void addBarcoNoTabuleiro() throws BarcoInvalidoException {
-//
-//		int tab = 1;
-//		t.addBarcoNoJogo("PORTA_AVIOES", 4);
-//		int tabuleiro[][] = { { 7, 4 }, { 11, 4 } };
-//		//assertEquals(7, t.getLinha() );
-//	}
 
 }

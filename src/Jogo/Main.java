@@ -1,36 +1,50 @@
 package Jogo;
 
 import java.util.Scanner;
+import java.util.regex.Pattern;
 
 import Execoes.BarcoInvalidoException;
+import Execoes.NomeInvalidoException;
 import Execoes.TamanhoInvalidoException;
 
 public class Main {
 
-	public static void main(String[] args) {
+	public static void main(String[] args) throws BarcoInvalidoException, NomeInvalidoException {
 		Tabuleiro t = new Tabuleiro();
 
 		Scanner s = new Scanner(System.in);
-//		System.out.println("largura");
-//		int l = s.nextInt();
-//		System.out.println("altura");
-//		int a = s.nextInt();
-//
-//		try {
-//			t.criarJogo(l, a);
-//		} catch (TamanhoInvalidoException e) {
-//			System.out.println(e.getMessage());
-//		}
-		
-		for (int i = 0; i < 3; i++) {
-			System.out.println("nome do barco");
-			String n = s.nextLine();
-			try {
-				t.addBarcoNoJogo(n, 3);
-			} catch (BarcoInvalidoException e) {
-				System.out.println(e.getMessage());
-			}
-		}
 
+// TESTE 1
+//		System.out.println("nome");
+//		String nome = s.nextLine();
+//		t.addBarcoNoJogo(nome, 3);
+//
+//		for (int i = 0; i < 3; i++) {
+//			System.out.println("nome do barco");
+//			String n = s.nextLine();
+//			try {
+//				t.addBarcoNoJogo(n, 3);
+//			} catch (BarcoInvalidoException e) {
+//				System.out.println(e.getMessage());
+//			}
+//		}
+
+		
+		
+//		    TESTE 2
+//		
+//			System.out.println("nome do barco");
+//			String n = s.nextLine();
+//			System.out.println("tamanho do barco");
+//			int ta = s.nextInt();
+//			try {
+//				t.addBarcoNoJogo(n, ta);
+//				System.out.println("barco adicionado!");
+//			} catch (BarcoInvalidoException e) {
+//				System.out.println(e.getMessage());
+//			}
+		
+	
+		
 	}
 }
